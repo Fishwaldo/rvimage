@@ -1,3 +1,3 @@
-FROM riscv64/ubuntu
-RUN apt update && apt upgrade -y && apt install -y sudo && echo "ALL            ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers
-COPY sudo /etc/pam.d/
+FROM riscv64/ubuntu:24.10
+RUN apt update && apt upgrade -y
+RUN echo 'root:riscv' | chpasswd
